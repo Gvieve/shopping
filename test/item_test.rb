@@ -10,5 +10,6 @@ class ItemTest < Minitest::Test
     assert_instance_of Item, item2
     assert_equal 'Tomato', item2.name
     assert_equal 0.5, item2.price
+    assert_equal 0.75, item1.price
   end
 end
