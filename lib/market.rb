@@ -56,4 +56,13 @@ class Market
       end
     end.uniq.sort
   end
+
+  def sell(item, quantity)
+    if total_inventory[item].nil? || total_inventory[item][:quantity] < quantity
+      return false
+    end
+
+    require "pry"; binding.pry
+
+  end
 end
