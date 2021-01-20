@@ -18,4 +18,10 @@ class Vendor
   def check_stock(item)
     @inventory[item].nil? ? 0 : @inventory[item]
   end
+
+  def sell_item?(name)
+    @inventory.keys.any? do |item|
+      item.name == name
+    end
+  end
 end
