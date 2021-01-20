@@ -16,4 +16,10 @@ class Market
       vendor.name
     end
   end
+
+  def vendors_that_sell(item_name)
+    @vendors.find_all do |vendor|
+      vendor.sell_item?(item_name)
+    end
+  end
 end
