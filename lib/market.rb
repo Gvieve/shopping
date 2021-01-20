@@ -38,4 +38,18 @@ class Market
 
     totals
   end
+
+  def overstocked_items
+    total_inventory.map do |item, info|
+      item if info[:quantity] > 50 && info[:vendors].length > 1
+    end.compact
+  end
+
+  def sorted_item_list
+    @vendors.flat_map do |vendor|
+      vendor.inventory.keys.map do |item|
+        item.name
+      end
+    end.uniq.sort
+  end
 end
